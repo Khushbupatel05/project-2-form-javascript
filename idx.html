@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+</head>
+
+<body class="img">
+    <section class="d-flex vh-100">
+        <div class="m-auto">
+            <form action="" id="form">
+                <div class="container">
+                    <div class="glass mt-3 p-3">
+                        <div class="row">
+                            <h1 class="text-center my-4 ">Form validation</h1>
+                            <div class="col-md-6">
+                                <div class="">
+                                    <label for="name">First Name : </label>
+                                    <input type="text" id="name1" name="name" class="form-control my-4 ">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="">
+                                    <label for="name">Last Name : </label>
+                                    <input type="text" id="name2" name="name" class="form-control my-4  ">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class=" ">
+                                    <label for="mail">Email Id :</label>
+                                    <input type="text" id="mail" class="form-control my-4" name="mail">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class=" ">
+                                    <label for="contact">Mobile no. :</label>
+                                    <input type="number" id="nb" class="form-control my-4" name="num">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="">
+                                    <label for="pass">Password :</label>
+                                    <input type="password" id="pass" class="form-control my-4  " name="pass">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="">
+                                    <label for="c_pass">Confirm Password :</label>
+                                    <input type="password" id="c_pass" class="form-control my-4  " name="pass">
+                                </div>
+                            </div>
+                        </div>
+                       <div class="text-center">
+                        <button class="btn btn-success my-4" id="sub">Submit</button>
+                       </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+   
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/jqurey.js"></script>
+    <script src="./idx.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let nameEle = document.getElementById("name1")
+            let nameEl = document.getElementById("name2")
+            let email = document.getElementById("mail")
+            let contactnum = document.getElementById("nb")
+            let password = document.getElementById("pass")
+            let confirmPassword = document.getElementById("c_pass")
+            let form = document.getElementById("form")
+
+
+            console.log(nameEle, email, password, confirmPassword)
+
+            $("#sub").on("click", function (e) {
+                e.preventDefault();
+                if (nameEle.value.trim() == "") {
+                    Swal.fire({
+                        title: "First Name is required....",
+                        text: "That thing is still around?",
+                        icon: "success"
+                    });
+                    return
+                }
+                if (nameEl.value.trim() == "") {
+                    Swal.fire({
+                        title: "Last Name is required....",
+                        text: "That thing is still around?",
+                        icon: "success"
+                    });
+                    return
+                }
+
+                if (email.value.trim() == "") {
+                    Swal.fire({
+                        title: "Email is required....",
+                        text: "That thing is still around?",
+                        icon: "success"
+                    });
+                    return
+                }
+
+                if (contactnum.value.trim() == "") {
+                    Swal.fire({
+                        title: "Mobile number is required....",
+                        text: "That thing is still around?",
+                        icon: "success"
+                    });
+                    return
+                }
+
+                if (nameEle.value.trim() == "" || c_pass.value.trim() == "") {
+                    Swal.fire({
+                        title: "password / confirm password is nessasry....",
+                        text: "That thing is still around?",
+                        icon: "success"
+                    });
+                    return
+                } else if (pass.value.length < 8) {
+                    Swal.fire({
+                        title: "8 character is nessasry...",
+                        text: "That thing is still around?",
+                        icon: "success"
+                    });
+                    return
+                } else if (pass.value !== c_pass.value) {
+                    Swal.fire({
+                        title: "does not match...",
+                        text: "That thing is still around?",
+                        icon: "success"
+                    });
+                    return
+                }
+
+                Swal.fire({
+                    title: "thanks....",
+                    text: "your form is submited succesfully.....",
+                    icon: "success"
+                }).then((result) => {
+                    form.submit()
+                });
+                return
+            })
+        })
+    </script>
+</body>
+
+</html>

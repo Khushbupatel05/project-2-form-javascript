@@ -1,0 +1,16 @@
+.img{
+    background-image: url('https://img.freepik.com/free-vector/flat-design-minimalist-background_23-2149987685.jpg?t=st=1738835298~exp=1738838898~hmac=905ff0e60b74c610a910fea47db1270aff1bb0cea33192b6b0d427ba61f631ba&w=1380');
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.glass{
+background-color: transparent ;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
